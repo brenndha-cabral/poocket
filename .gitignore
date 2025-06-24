@@ -1,0 +1,38 @@
+# Diretórios de build
+bin/
+obj/
+
+# Arquivos executáveis e bibliotecas
+*.exe
+*.dll
+*.pdb
+
+# Arquivos de configuração específicos do usuário
+*.user
+*.vspscc
+
+# Arquivos temporários
+#*#
+*.tmp
+
+# Diretório do Visual Studio
+.vs/
+
+# Diretório de pacotes NuGet
+packages/
+
+# Arquivos de configuração
+appsettings.json
+*.config
+secrets.json
+.env
+
+# Logs
+*.log
+
+# Outros
+Thumbs.db
+*.suo
+*.csproj.user
+*.sln.docstates
+[Bb]uild/
