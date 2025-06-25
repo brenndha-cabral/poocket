@@ -13,11 +13,11 @@ namespace poocket.Models
 
     public override void InjectModule(ModulesApp module)
     {
-      Console.Write("\n🔐 Confirmação mágica (sim/nao): ");
+      Console.Write("\n🔐 Confirmação (s/n): ");
 
       var confirm = Console.ReadLine();
       
-      if (confirm?.ToLower() != "sim")
+      if (confirm?.ToLower() != "s")
       {
         Console.WriteLine("❌ Operação cancelada.");
         return;
@@ -33,7 +33,7 @@ namespace poocket.Models
 
       Console.WriteLine("🧬 [Lux] Sincronizando módulo com IA...");
       Modules.Add(module);
-      Console.WriteLine($"✨ Módulo \"{module}\" injetado no Lux.");
+      Console.WriteLine($"✨ Módulo \"{module.Name}\" injetado no Lux.");
     }
 
     public override void RemoveModule(string module)
