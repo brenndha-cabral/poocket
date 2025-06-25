@@ -5,13 +5,13 @@ using System.Threading.Tasks;
 
 namespace poocket.Models
 {
-    public class App
+    public class ModulesApp
     {
-        public int Id { get; set; }
+        public string Id { get; set; }
         public string Name { get; set; }
 
-        public App(
-            int id,
+        public ModulesApp(
+            string id,
             string name
         )
         {

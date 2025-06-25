@@ -6,23 +6,46 @@ using poocket.Repository;
 
 namespace poocket.Models
 {
-  public class Smartphone
-  {
-    private int v;
-
-    public string Imei { get; set; }
-    public string Model { get; set; }
-    public int Storage { get; set; }
-
-    public Smartphone(
-        string imei,
-        string model,
-        int storage
-        )
+    public abstract class Smartphone : ISmartphone
     {
-        Imei = imei;
-        Model = model;
-        Storage = storage;
-    }
+        public string Imei { get; set; }
+        public string Model { get; set; }
+        public int Storage { get; set; }
+        protected List<ModulesApp> Modules = new List<ModulesApp>();
+
+        public Smartphone(
+            string imei,
+            string model,
+            int storage
+            )
+        {
+            Imei = imei;
+            Model = model;
+            Storage = storage;
+        }
+        public abstract void InjectModule(ModulesApp module);
+
+        public virtual void RemoveModule(string idModule)
+        {
+            ModulesApp moduleFound = Modules.Find(module => module.Id == idModule);
+
+            if (Modules.Remove(moduleFound))
+            {
+                Console.WriteLine($"✅ Módulo \"{idModule}\" removido.");
+            }
+            else
+            {
+                Console.WriteLine($"❌ Módulo \"{idModule}\" não encontrado.");
+            }
+        }
+
+        public void ListModules()
+        {
+            Console.WriteLine("\n📋 Módulos ativos no núcleo:");
+            foreach (var module in Modules)
+            {
+                Console.WriteLine($"- {module}");
+            }
+        }
   }
 }
