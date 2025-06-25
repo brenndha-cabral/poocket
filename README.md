@@ -38,14 +38,25 @@ dotnet run
 ```
 ---
 
+## 🧩 Comandos Disponíveis
 
+- 1 - `T-33 Titan`
+- 2 - `LX-9 Lux`
+- 3 - `Listar todos os módulos`
+- 4 - `Sair do sistema`
+
+Durante a sessão, após escolher seu UPN, você pode usar:
+
+- `inject` → Injeta um novo módulo após confirmação  
+- `remove` → Remove um módulo com base no ID  
+- `list` → Lista todos os módulos ativos  
+- `exit` → Finaliza a sessão atual  
 
 ## ✨ Exemplos de Uso
 
 ![](https://github.com/brenndha-cabral/poocket/blob/main/public/assets/images/terminal.gif)
 
-Injetar módulo:
-<p style="color: limegreen;">🔧 [Titan] Iniciando injeção do módulo...</p>
-<p style="color: cyan;">🧬 [Titan] Sincronizando módulo com IA...</p>
-<p style="color: gold;">✨ Módulo "defesa" injetado no Titan.</p>
+## 📌 Sobre
 
+Feito com dedicação por [Brenndha Cabral](https://www.linkedin.com/in/brenndhacabral/) durante o bootcamp da DIO.  
+Este espaço é onde pratico, erro, corrijo e aprendo 💪✨
