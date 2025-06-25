@@ -11,7 +11,7 @@ namespace poocket.Models
         public string Imei { get; set; }
         public string Model { get; set; }
         public int Storage { get; set; }
-        protected List<ModulesApp> Modules = new List<ModulesApp>();
+        public List<ModulesApp> Modules = new List<ModulesApp>();
 
         public Smartphone(
             string imei,
@@ -29,22 +29,29 @@ namespace poocket.Models
         {
             ModulesApp moduleFound = Modules.Find(module => module.Id == idModule);
 
-            if (Modules.Remove(moduleFound))
-            {
-                Console.WriteLine($"✅ Módulo \"{idModule}\" removido.");
-            }
-            else
+
+            if (!Modules.Remove(moduleFound))
             {
                 Console.WriteLine($"❌ Módulo \"{idModule}\" não encontrado.");
             }
+            
+            Modules.Remove(moduleFound);
         }
 
         public void ListModules()
         {
-            Console.WriteLine("\n📋 Módulos ativos no núcleo:");
+            Console.Write("Buscando módulos");
+            for (int i = 0; i < 3; i++)
+            {
+            Thread.Sleep(600);
+            Console.Write(".");
+            }
+            Console.WriteLine();
             foreach (var module in Modules)
             {
-                Console.WriteLine($"- {module}");
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine($"🔹 Nome: {module.Name} - Id: {module.Id}");
+                Console.ForegroundColor = ConsoleColor.Cyan;
             }
         }
   }
