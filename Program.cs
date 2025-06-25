@@ -1,10 +1,7 @@
 ﻿
 using poocket.Models;
 
-List<ModulesApp> modules = new List<ModulesApp>();
 bool hasRunProgram = true;
-
-
 
 try
 {
@@ -15,7 +12,7 @@ try
 
     Smartphone smartphone = null!;
 
-    Console.WriteLine("\n> Escolha uma opção:\n\n 🔹 1. T-33 Titan [Estável]\n 🔹 2. LX-9 Lux [Avançado]\n 🔹 3. Sair\n");
+    Console.WriteLine("\n> Escolha uma opção:\n\n 🔹 1. T-33 Titan [Estável]\n 🔹 2. LX-9 Lux [Avançado]\n 🔹 3. Listar Todos \n 🔹 4. Sair\n");
 
     int input = Convert.ToInt32(Console.ReadLine());
 
@@ -92,6 +89,10 @@ try
         break;
 
       case 3:
+        smartphone.ListModules();
+        break;
+
+      case 4:
         Console.WriteLine("\n❌ Encerrando protocolo.");
         hasRunProgram = false;
         break;
